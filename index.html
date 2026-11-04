@@ -461,6 +461,15 @@ function fb(img){img.onerror=null;img.src=img.dataset.remote||("https://webinar.
   new IntersectionObserver(function(e){bar.classList.toggle("hide",e[0].isIntersecting)},{threshold:.15}).observe(form);
 })();
 
+// After someone registers in the embedded Tally form, send them to the thank-you page
+window.addEventListener("message",function(e){
+  try{
+    if(!/(^|\.)tally\.so$/.test(new URL(e.origin).hostname))return;
+    var data=typeof e.data==="string"?JSON.parse(e.data):e.data;
+    if(data&&data.event==="Tally.FormSubmitted"){window.location.href="/thank-you";}
+  }catch(err){}
+});
+
 // Tally embed (same form as the current page)
 var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function(e){e.src=e.dataset.tallySrc})};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w;s.onload=v;s.onerror=v;d.body.appendChild(s);}
 </script>
