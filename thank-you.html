@@ -75,6 +75,9 @@ h1,h2,h3{line-height:1.15;letter-spacing:-.025em;font-weight:800}
 .call .step{background:rgba(138,191,236,.15);color:var(--accent)}
 .call p{color:var(--on-dark)}
 .call .btn{font-size:17px;padding:16px 26px}
+.booking{margin-top:20px;background:#fff;border-radius:16px;overflow:hidden;min-height:620px}
+.booking-alt{margin-top:12px;font-size:14px;text-align:center}
+.booking-alt a{color:var(--accent);font-weight:600}
 
 footer{text-align:center;color:var(--muted);font-size:13px;padding:0 0 40px}
 
@@ -139,7 +142,8 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:0 0 40px}
     <span class="step">Step 2</span>
     <h2>Want to land your dream job sooner?</h2>
     <p>Book a free call with our team. We'll look at where you are in your search and map out what to fix first.</p>
-    <div class="btns"><a class="btn" href="https://app.aura-app.ai/hiredindata/workshop-call?theme_preset=light&aura_setter=93912786" target="_blank" rel="noopener">Book a time →</a></div>
+    <div class="booking"><div data-aura-scheduler data-url="https://app.aura-app.ai/hiredindata/workshop-call?theme_preset=light&amp;aura_setter=93912786" data-mode="inline" data-height="auto"></div></div>
+    <p class="booking-alt">Calendar not loading? <a href="https://app.aura-app.ai/hiredindata/workshop-call?theme_preset=light&amp;aura_setter=93912786" target="_blank" rel="noopener">Book here →</a></p>
   </div>
 
   <!-- PREP -->
@@ -191,5 +195,6 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:0 0 40px}
   };
 })();
 </script>
+<script src="https://app.aura-app.ai/embed/aura.js" async></script>
 </body>
 </html>
